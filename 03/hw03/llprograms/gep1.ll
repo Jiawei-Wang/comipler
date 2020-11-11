@@ -2,11 +2,10 @@
 %var1 = type { i64, i64* }
 %var2 = type { i64, i8** }
 
+@gstr = global [14 x i8] c"hello, world!\00"
 @gint = global i64 42
 @v1 = global %var1 { i64 0, i64* @gint }
 @v2 = global %var2 { i64 1, i8** null }
-@gstr = global [14 x i8] c"hello, world!\00"
-
 
 define i64 @main(i64 %argc, i8** %argv) {
   %p0 = alloca i64

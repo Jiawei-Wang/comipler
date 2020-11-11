@@ -1,4 +1,5 @@
 %fty = type i64 (i64, i64)
+
 declare i64 @ll_callback(%fty*)
 declare i8* @ll_ltoa(i64)
 declare void @ll_puts(i8*)
@@ -10,6 +11,11 @@ define i64 @foo(i64 %x, i64 %y) {
   %3 = load i64, i64* %1
   ret i64 %3
 }
+
+define i8 @boo(i64 %x) {
+  ret i64 %x
+}
+
 
 define i64 @main(i64 %argc, i8** %argv) {
   %1 = call i64 @ll_callback(%fty* @foo)

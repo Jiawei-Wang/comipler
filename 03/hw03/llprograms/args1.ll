@@ -1,6 +1,3 @@
-declare void @ll_puts(i8*)
-declare i8* @ll_strcat(i8*, i8*)
-
 @toofew = global [9 x i8] c"argc < 3\00"
 @toomany = global [9 x i8] c"argc > 3\00"
 
@@ -27,3 +24,4 @@ right:
   call void @ll_puts(i8* %7)
   ret i64 0
 }
+

@@ -69,3 +69,4 @@ end2:
   %r = load i64, i64* %ptr
   ret i64 %r
 }
+

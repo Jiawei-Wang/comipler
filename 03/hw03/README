@@ -1,14 +1,8 @@
-Using main.native:
-
-main.native acts like the clang compiler.  Given several .ll, .c, and .o files,
-it will compile the .ll files to .s files (using the CIS 341 backend) and then combine
-the results with the .c and .o files to produce an executable named a.out.  You can
-also compile the .ll files using clang instead of the CIS 341 backend, which can
-be useful for testing purposes.
-
+Using main.native for testing:
 
 * To run the automated test harness do:
-  ./main.native --test              
+  - on OS X:   ./main.native --test              
+  - on Linux:  ./main.native -linux --test     
 
 * To compile ll files using the 341 backend:
   ./main.native path/to/foo.ll 
@@ -34,10 +28,6 @@ be useful for testing purposes.
 
   --print-x86
     echoes the resulting .s file to the terminal
-
-  --interpret-ll
-    runs the ll file through the reference interpreter
-    and outputs the results to the console
 
   --simulate-x86
     runs the resulting .s file through the reference 
@@ -74,3 +64,6 @@ Run the test case /programs/factrect.ll using the 341 backend:
 ./main.native --execute-x86 programs/factrect.ll 
 --------------------------------------------------------------- Executing: a.out
 * a.out returned 120
+
+
+Run the test

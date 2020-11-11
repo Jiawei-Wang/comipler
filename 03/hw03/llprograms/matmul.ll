@@ -7,25 +7,9 @@
 @matr = global %mat [ %vec [ i64 0, i64 0 ], %vec [ i64 0, i64 0 ] ]
 
 define i64 @main(i64 %argc, i8** %argv) {
-  %cnt = alloca i64
-  store i64 10000000, i64* %cnt
-  br label %loop
-
-loop:
-  %tmp = load i64, i64* %cnt
-  %b = icmp eq i64 %tmp, 0
-  br i1 %b, label %exit, label %body
-
-body:
   call void @matmul(%mat* @mat1, %mat* @mat2, %mat* @matr)
-  %ans = call i64 @mateq(%mat* @mat3, %mat* @matr)
-  %tmp2 = load i64, i64* %cnt
-  %tmp3 = sub i64 %tmp2, 1
-  store i64 %tmp3, i64* %cnt
-  br label %loop
-
-exit:
-  ret i64 0
+  %1 = call i64 @mateq(%mat* @mat3, %mat* @matr)
+  ret i64 %1
 }
 
 define void @matmul(%mat* %a, %mat* %b, %mat* %c) {

@@ -3,7 +3,6 @@ define i64 @program(i64 %argc, i8** %argv) {
   %2 = add i64 0, 2
   %3 = add i64 %1, %2
   ret i64 %3
-
 foo:
   %4 = alloca i64
   store i64 1, i64* %4
