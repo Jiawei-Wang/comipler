@@ -1,0 +1,20 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules main.ml > main.ml.depends # cached
+# Target: gradedtests.ml.depends, tags: { extension:ml, file:gradedtests.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules gradedtests.ml > gradedtests.ml.depends # cached
+# Target: simulator.ml.depends, tags: { extension:ml, file:simulator.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules simulator.ml > simulator.ml.depends # cached
+# Target: int64_overflow.mli.depends, tags: { extension:mli, file:int64_overflow.mli, ocaml, ocamldep, quiet }
+ocamldep.opt -modules int64_overflow.mli > int64_overflow.mli.depends # cached
+# Target: int64_overflow.cmi, tags: { byte, compile, extension:mli, file:int64_overflow.mli, interf, ocaml, quiet }
+ocamlc.opt -c -o int64_overflow.cmi int64_overflow.mli
+# Target: simulator.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:simulator.cmo, file:simulator.ml, implem, ocaml, quiet }
+ocamlc.opt -c -o simulator.cmo simulator.ml
++ ocamlc.opt -c -o simulator.cmo simulator.ml
+File "simulator.ml", line 15, characters 5-8:
+15 | open X86
+          ^^^
+Error: Unbound module X86
+Command exited with code 2.
+# Compilation unsuccessful.
